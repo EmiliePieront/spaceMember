@@ -1,4 +1,4 @@
-        <?php include "components/header.php";
+<?php include "components/header.php";
         if(isset($_SESSION["connect"])){
             header("location: ../spaceMember/index.php");
             exit();
@@ -29,6 +29,7 @@
                     exit();
                 }
             }
+            $email = $_POST["email"];
        
             // If the username is already used : 
             $req = $bddLocal->prepare("SELECT * FROM users WHERE username = ?");
@@ -39,6 +40,8 @@
                     exit();
                 }
             }
+            $username = $_POST["username"];
+
             //Hash 
             $secret = sha1($email).rand();
             $secret = sha1($secret).time().time();
@@ -52,6 +55,7 @@
             header('location: ?success=1');
             exit();
 
+            echo $username." ".$email." ";
         }
 
         ?>

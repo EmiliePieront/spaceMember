@@ -52,7 +52,7 @@
             //Send request :
             $req = $bddLocal->prepare("INSERT INTO users(username, email, password, secret) VALUES(?, ?, ?, ?)");
             $req->execute(array($username, $email, $password, $secret));
-            header('location: ?success=1');
+            header('location: ?success=1&user='.$username);
             exit();
 
             echo $username." ".$email." ";
@@ -90,7 +90,7 @@
                         } else if(isset($_GET["success"])){
                     ?>
                             <div class="mt-3 success center">
-                                <p>Your account is successfully created. Please login.</p>
+                                <p>Your account is successfully created <?php echo $_GET["user"];?>. Please login.</p>
                             </div>                                
                     <?php
                         }

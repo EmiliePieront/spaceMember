@@ -10,10 +10,10 @@
         
         <?php
         if(!empty($_POST["username"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["confirmPassword"])){
-            $username = $_POST["username"];
-            $email = $_POST["email"];
-            $password = $_POST["password"];
-            $confirmPassword = $_POST["confirmPassword"];
+            $username = htmlspecialchars($_POST["username"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $password = htmlspecialchars($_POST["password"]);
+            $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
 
             if($password != $confirmPassword){
                 header("location: ?error=1&pass=1");
@@ -29,7 +29,7 @@
                     exit();
                 }
             }
-            $email = $_POST["email"];
+            $email = htmlspecialchars($_POST["email"]);
        
             // If the username is already used : 
             $req = $bddLocal->prepare("SELECT * FROM users WHERE username = ?");
@@ -40,14 +40,14 @@
                     exit();
                 }
             }
-            $username = $_POST["username"];
+            $username = htmlspecialchars($_POST["username"]);
 
             //Hash 
-            $secret = sha1($email).rand();
-            $secret = sha1($secret).time().time();
+            $secret = htmlspecialchars(sha1($email).rand());
+            $secret = htmlspecialchars(sha1($secret).time().time());
 
             //Password hash 
-            $password = "naxx".sha1($password."geek")."1990";
+            $password = htmlspecialchars("naxx".sha1($password."geek")."1990");
 
             //Send request :
             $req = $bddLocal->prepare("INSERT INTO users(username, email, password, secret) VALUES(?, ?, ?, ?)");

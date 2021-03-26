@@ -88,7 +88,7 @@
                         } else if(isset($_GET["success"])){
                     ?>
                             <div class="mt-3 success center">
-                                <p>Your account is successfully created <?php echo $_GET["user"];?>. Please login.</p>
+                                <p>Your account is successfully created <?php echo htmlspecialchars($_GET["user"]);?>. Please login.</p>
                             </div>                                
                     <?php
                         }

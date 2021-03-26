@@ -54,8 +54,6 @@
             $req->execute(array($username, $email, $password, $secret));
             header('location: ?success=1&user='.$username);
             exit();
-
-            echo $username." ".$email." ";
         }
 
         ?>

@@ -16,7 +16,7 @@
             $confirmPassword = $_POST["confirmPassword"];
 
             if($password != $confirmPassword){
-                header("location: ../?error=1&pass=1");
+                header("location: ?error=1&pass=1");
                 exit();
     
             }
@@ -25,7 +25,7 @@
             $req->execute(array($email));
             while ($email = $req->fetch()){
                 if ($_POST["email"] == $email["email"]){
-                    header("location: ../?error=1&usedemail=1");
+                    header("location: ?error=1&usedemail=1");
                     exit();
                 }
             }
@@ -35,7 +35,7 @@
             $req->execute(array($username));
             while ($username = $req->fetch()){
                 if ($_POST["username"] == $username["username"]){
-                    header("location: ../?error=1&usedusername=1");
+                    header("location: ?error=1&usedusername=1");
                     exit();
                 }
             }

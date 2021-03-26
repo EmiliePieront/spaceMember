@@ -27,11 +27,11 @@
                         // name, what we take as variable, time + 1 year
                         setcookie('log', $user['secret'], time() + 365*24*3600, '/', null, false, true);
                     }
-                    header('location: ?success=1');
+                    header('location: ../?success=1');
                     exit();
                 }
             }
-            header('location: ?error=1');
+            header('location: ../?error=1');
             exit();
             
         }

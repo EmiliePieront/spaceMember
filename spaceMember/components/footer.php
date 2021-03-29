@@ -1,17 +1,17 @@
         <?php
-            // $fichier = fopen("components/counter.txt", 'r+');
-            // $pages = fgets($fichier);
-            // fseek($fichier, 0); //(file's name, position in the file we want to go)
-            // $pages += 1;
-            // fputs($fichier, $pages);
+            $fichier = fopen("components/counter.txt", 'r+');
+            $pages = fgets($fichier);
+            fseek($fichier, 0); //(file's name, position in the file we want to go)
+            $pages += 1;
+            fputs($fichier, $pages);
 
 
-            // fclose($fichier);
+            fclose($fichier);
 
         ?>
         <footer>
             <section class="footer borderColor mt-4">
-                <p class="text-center mt-3">Vous êtes là <?php //echo $pages;?> ème personne à visiter le site.</p>
+                <p class="text-center mt-3">Vous êtes la <?php echo $pages;?> ème personne à visiter le site.</p>
                 <p class="text-center">© 2021 - Copyright Emi P.</p>
             </section>
 

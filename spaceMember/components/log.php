@@ -4,7 +4,7 @@
 
             $secret = htmlspecialchars($_COOKIE["log"]);
 
-            require("components/dbconnect.php");
+            require("components/dbconnectLocal.php");
             $req = $bddLocal->prepare('SELECT count(*) as numberAccount FROM users WHERE secret = ?');
             $req->execute(array($secret));
 

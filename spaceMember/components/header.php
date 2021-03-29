@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require "components/dbconnectLocal.php";?>
+<?php include "components/log.php";?>
 
 
 <!DOCTYPE html>

@@ -151,12 +151,14 @@ visibility: visible;
 .body .content > * {
     padding: 20px;
 }
-.aside {
-  
-}
+
 
 .marginRight {
     margin-right: 20px;
+}
+
+.aside li {
+    list-style-type: none;
 }
 /*------------------------------------- FOOTER -------------------------------*/
 

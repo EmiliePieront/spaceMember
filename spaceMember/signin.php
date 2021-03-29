@@ -1,5 +1,5 @@
 <?php include "components/header.php";
-        if(isset($_SESSION["connect"])){
+        if(isset($_SESSION["connect"]) || isset($_COOKIE["log"])){
             header("location: ../spaceMember/index.php");
             exit();
         }
@@ -43,17 +43,19 @@
             $username = htmlspecialchars($_POST["username"]);
 
             //Hash 
-            $secret = htmlspecialchars(sha1($email).rand());
-            $secret = htmlspecialchars(sha1($secret).time().time());
+            $secret = sha1($email).rand();
+            $secret = sha1($secret).time().time();
 
             //Password hash 
-            $password = htmlspecialchars("naxx".sha1($password."geek")."1990");
+            $password = "naxx".sha1($password."geek")."1990";
 
             //Send request :
             $req = $bddLocal->prepare("INSERT INTO users(username, email, password, secret) VALUES(?, ?, ?, ?)");
             $req->execute(array($username, $email, $password, $secret));
             header('location: ?success=1&user='.$username);
             exit();
+
+            echo $username." ".$email." ";
         }
 
         ?>
@@ -88,7 +90,7 @@
                         } else if(isset($_GET["success"])){
                     ?>
                             <div class="mt-3 success center">
-                                <p>Your account is successfully created <?php echo htmlspecialchars($_GET["user"]);?>. Please login.</p>
+                                <p>Your account is successfully created <?php echo $_GET["user"];?>. Please login.</p>
                             </div>                                
                     <?php
                         }

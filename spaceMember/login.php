@@ -1,5 +1,5 @@
-        <?php 
-        if(isset($_SESSION["connect"])){
+<?php 
+        if(isset($_SESSION["connect"]) || isset($_COOKIE["log"])){
             header("location: ../spaceMember/index.php");
             exit();
         }
@@ -14,7 +14,7 @@
             $password = htmlspecialchars($_POST["password"]);
 
             //Password crypt : 
-            $password = htmlspecialchars("naxx".sha1($password."geek")."1990");
+            $password = "naxx".sha1($password."geek")."1990";
             $req = $bddLocal->prepare("SELECT * FROM users WHERE email = ?");
             $req->execute(array($email));
             while($user = $req->fetch()){

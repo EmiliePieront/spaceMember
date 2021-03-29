@@ -5,10 +5,10 @@
                         <div class="box">
                                 <div class="borderColor marginRight">
                                         <div class="content">
-                                                <title>Lorem Ipsum</title>
+                                                <title>My personnal page made with PHP and MySQL</title>
                                                 <p>What a very good day</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti iste repudiandae at dolorem itaque sed id nulla, quae, rerum nisi laudantium. Nulla optio labore delectus a ab illum! Voluptate, impedit! Laudantium quibusdam quia ea quae repellendus at cum cupiditate atque!</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit suscipit autem maiores soluta adipisci provident quasi. Reprehenderit architecto at accusamus?</p>
+                                                <p>I try to make this little project to improve my skills with PHP and mySQL.</p>
+                                                <p>I have some ideas to complete this project but i have a lot of other projects so i don't have any time to do all of them. </p>
                                         </div>
                                         
                                 </div>
